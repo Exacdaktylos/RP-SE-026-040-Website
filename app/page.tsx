@@ -13,13 +13,66 @@ const features = [
 ];
 
 const team = [
-  { initials: "AU", name: "Ashandth Uthayashankar", id: "IT22272522", role: "Voice Intelligence", focus: "Offline voice command recognition and intelligent voice interaction", description: "Exploring wake-word interaction, offline speech recognition, intent processing, conversational responses and ROS 2 integration.", accent: "blue" },
-  { initials: "SA", name: "Sobiya Anton Suresh", id: "IT22203694", role: "Vision & Emotion", focus: "Face recognition and facial emotion recognition", description: "Developing user recognition, face enrolment, emotion observation and the human-context layer that informs companion behaviour.", accent: "violet" },
-  { initials: "YW", name: "S S Y Wickramasinghe", fullName: "Yohan Wickramasinghe", id: "IT21816086", role: "Navigation & Security", focus: "Navigation, autonomous patrol and security functionality", description: "Leading obstacle-aware movement, patrol logic, safety priorities, security alerts and the remote-control requirements of the mobile app.", accent: "orange" },
+  {
+    initials: "AU", name: "Ashandth Uthayashankar", id: "IT22272522", role: "Voice Intelligence",
+    focus: "Offline voice command recognition and intelligent voice interaction",
+    description: "Exploring wake-word interaction, offline speech recognition, intent processing, conversational responses and ROS 2 integration.",
+    accent: "blue", status: "Research Prototype",
+    responsibilities: [
+      "Wake-word interaction",
+      "Offline speech recognition & speech-to-text",
+      "Intent recognition & command processing",
+      "Conversational responses & local AI integration",
+      "Multi-microphone experimentation & sound direction research",
+      "ROS 2 migration & integration of voice components",
+    ],
+    tech: ["Python", "Vosk", "Whisper", "pyttsx3", "Ollama", "ROS 2 Jazzy"],
+  },
+  {
+    initials: "SA", name: "Sobiya Anton Suresh", id: "IT22203694", role: "Vision & Emotion",
+    focus: "Face recognition and facial emotion recognition",
+    description: "Developing user recognition, face enrolment, emotion observation and the human-context layer that informs companion behaviour.",
+    accent: "violet", status: "Research Prototype",
+    responsibilities: [
+      "Face detection & known-user recognition",
+      "Face enrolment",
+      "Emotion observation & logging",
+      "Daily mood / emotion visualization",
+      "Integration with BUDDY intelligence layer",
+      "Mobile-app emotional insight requirements",
+    ],
+    tech: ["Python", "OpenCV", "Facial recognition", "ML / DL"],
+  },
+  {
+    initials: "YW", name: "S S Y Wickramasinghe", fullName: "Yohan Wickramasinghe", id: "IT21816086", role: "Navigation & Security",
+    focus: "Navigation, autonomous patrol and security functionality",
+    description: "Leading obstacle-aware movement, patrol logic, safety priorities, security alerts and the remote-control requirements of the mobile app.",
+    accent: "orange", status: "In Development",
+    responsibilities: [
+      "Navigation research & obstacle detection",
+      "Movement logic & patrol-route planning",
+      "Navigation-state design (A* planning, dynamic replanning)",
+      "Security-event concepts & emergency alerts",
+      "Autonomous / manual control requirements",
+      "Mobile app: remote control, patrol, security alerts, live camera",
+    ],
+    tech: ["ROS 2 Jazzy", "Obstacle sensors", "Raspberry Pi", "Mobile UI/UX"],
+  },
 ];
 
 const milestones = [
-  ["01", "Requirements & scope", "Complete"], ["02", "Development workflow", "Complete"], ["03", "ROS 2 Jazzy environment", "Complete"], ["04", "Workspace foundation", "Complete"], ["05", "Interface contracts", "Complete"], ["06", "Configuration & logging", "Complete"], ["07", "Hardware architecture", "Complete"], ["08", "Hardware verification", "In progress"], ["09", "Full system integration", "Planned"], ["10", "Testing & evaluation", "Planned"],
+  ["01", "Requirements & scope", "Problem identification, feasibility and project scope definition.", "Complete"],
+  ["02", "Git development workflow", "Feature-branch workflow, controlled milestones and code review practice.", "Complete"],
+  ["03", "ROS 2 Jazzy environment", "Reproducible development environment on Ubuntu 24.04 with ROS 2 Jazzy.", "Complete"],
+  ["04", "Workspace foundation", "Modular workspace structure with isolated packages and clear boundaries.", "Complete"],
+  ["05", "Interface contracts", "14 custom interfaces — messages, services and actions — frozen for stability.", "Complete"],
+  ["06", "Configuration & secrets", "Centralized YAML configuration with environment overrides and secrets out of Git.", "Complete"],
+  ["07", "Centralized logging", "Structured logs with rotation, secret redaction and bounded disk usage.", "Complete"],
+  ["08", "Hardware architecture", "Power domain, GPIO and safety architecture planning.", "Complete"],
+  ["09", "Hardware verification", "Physical verification of component specifications and electrical values.", "In progress"],
+  ["10", "Hardware integration", "Assembly and integration of verified hardware with the software stack.", "Planned"],
+  ["11", "Robot intelligence integration", "Bringing voice, vision, emotion and navigation together into unified behaviour.", "Planned"],
+  ["12", "Testing & evaluation", "Subsystem and end-to-end testing with verified evaluation results.", "Planned"],
 ];
 
 function Status({ children }: { children: React.ReactNode }) {
@@ -125,13 +178,13 @@ export default function Home() {
 
       <section id="development" className="development section-shell">
         <SectionLabel index="06">Development journey</SectionLabel><div className="section-heading-row"><h2>Built one verified<br /><em>step at a time.</em></h2><div><p>A controlled workflow keeps the project honest about what is complete, what is being tested and what still lies ahead.</p><div className="method-line"><span>Implement</span><i>→</i><span>Test</span><i>→</i><span>Verify</span><i>→</i><span>Commit</span></div></div></div>
-        <div className="milestone-list">{milestones.map(([number, title, status]) => <article key={number}><span>{number}</span><h3>{title}</h3><Status>{status}</Status></article>)}</div>
+        <div className="milestone-list">{milestones.map(([number, title, desc, status]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{desc}</p></div><Status>{status}</Status></article>)}</div>
         <div className="evaluation-note"><span>RESEARCH INTEGRITY</span><h3>Results will appear here when evaluation is complete.</h3><p>No accuracy, latency, reliability, runtime or cost figures will be published until they have been tested and verified.</p><Status>Evaluation pending</Status></div>
       </section>
 
       <section id="team" className="team-section"><div className="section-shell">
         <SectionLabel index="07">Research team</SectionLabel><div className="section-heading-row"><h2>Three disciplines.<br /><em>One shared system.</em></h2><p>Each contribution is independently researched and intentionally designed to meet at the BUDDY intelligence layer.</p></div>
-        <div className="team-grid">{team.map((member) => <article key={member.id} className={`team-card accent-${member.accent}`}><div className="member-top"><span className="member-avatar">{member.initials}</span><span className="member-id">{member.id}</span></div><span className="member-role">{member.role}</span><h3>{member.name}</h3>{member.fullName && <small className="full-name">{member.fullName}</small>}<h4>{member.focus}</h4><p>{member.description}</p></article>)}</div>
+        <div className="team-grid">{team.map((member) => <article key={member.id} className={`team-card accent-${member.accent}`}><div className="member-top"><span className="member-avatar">{member.initials}</span><span className="member-id">{member.id}</span></div><span className="member-role">{member.role}</span><h3>{member.name}</h3>{member.fullName && <small className="full-name">{member.fullName}</small>}<h4>{member.focus}</h4><p>{member.description}</p><ul className="member-responsibilities">{member.responsibilities.map((item) => <li key={item}>{item}</li>)}</ul><div className="tag-row member-tags">{member.tech.map((tag) => <span key={tag}>{tag}</span>)}</div><Status>{member.status}</Status></article>)}</div>
         <div className="supervision-card"><div className="supervisor-mark">PG</div><div><span>RESEARCH GUIDANCE</span><h3>Pradeep Gunawardana</h3><p>Research Supervisor</p></div><div className="supervision-copy">Supporting the team’s research direction, technical evaluation and academic progress throughout the project.</div><Status>Profile details pending</Status></div>
       </div></section>
 
