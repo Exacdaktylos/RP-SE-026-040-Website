@@ -1265,20 +1265,23 @@ button {
 
 .status {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  width: max-content;
+  min-width: 84px;
+  min-height: 30px;
 
-  border: 1px solid currentColor;
-  border-radius: 100px;
+  padding: 6px 12px;
 
-  padding: 6px 9px;
+  border-radius: 999px;
 
-  font:
-    800 7px ui-monospace,
-    monospace;
+  font-size: 10px;
+  font-weight: 700;
 
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
+  line-height: 1;
+  white-space: nowrap;
+
+  box-sizing: border-box;
 }
 
 .status-complete {
