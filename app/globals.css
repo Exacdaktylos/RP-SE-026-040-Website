@@ -1086,6 +1086,11 @@ button {
   text-transform: uppercase;
 }
 
+.problem-card-wide .mini-pills span {
+  color: #123c35;
+  background: #fffdf8;
+}
+
 .gap-visual {
   position: absolute;
 
@@ -1260,20 +1265,23 @@ button {
 
 .status {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  width: max-content;
+  min-width: 84px;
+  min-height: 30px;
 
-  border: 1px solid currentColor;
-  border-radius: 100px;
+  padding: 6px 12px;
 
-  padding: 6px 9px;
+  border-radius: 999px;
 
-  font:
-    800 7px ui-monospace,
-    monospace;
+  font-size: 10px;
+  font-weight: 700;
 
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
+  line-height: 1;
+  white-space: nowrap;
+
+  box-sizing: border-box;
 }
 
 .status-complete {
@@ -1841,6 +1849,99 @@ button {
     monospace;
 
   font-style: normal;
+}
+
+/* -------------------------------------------------------
+   REAL BUDDY ROBOT PHOTO
+------------------------------------------------------- */
+
+.robot-photo-stage {
+  position: absolute;
+  inset: 42px 46px;
+
+  z-index: 1;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  border: 2px solid var(--ink);
+  background: var(--paper);
+
+  box-shadow: 5px 6px 0 var(--ink);
+}
+
+.buddy-robot-photo {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 0;
+}
+
+.robot-photo-caption {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  padding: 12px 15px;
+
+  min-width: 205px;
+
+  background: rgba(255, 253, 248, 0.94);
+
+  border: 1.5px solid var(--ink);
+  border-radius: 14px;
+
+  box-shadow: 3px 3px 0 var(--ink);
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  backdrop-filter: blur(8px);
+}
+
+.robot-photo-caption span {
+  font:
+    800 7px ui-monospace,
+    monospace;
+
+  color: var(--coral);
+
+  letter-spacing: 0.1em;
+}
+
+.robot-photo-caption strong {
+  font-size: 12px;
+}
+
+.robot-photo-caption small {
+  font:
+    600 7px ui-monospace,
+    monospace;
+
+  color: var(--muted);
+}
+
+@media (max-width: 680px) {
+  .robot-photo-stage {
+    inset: 28px 20px;
+  }
+
+  .robot-photo-caption {
+    left: 12px;
+    bottom: 12px;
+
+    min-width: 175px;
+
+    padding: 10px 12px;
+  }
 }
 
 .board-label {
@@ -2900,6 +3001,14 @@ button {
     serif;
 
   color: var(--muted);
+}
+
+.resource-grid > a {
+  display: block;
+}
+
+.resource-grid > a article {
+  height: 100%;
 }
 
 .github-callout {

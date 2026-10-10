@@ -145,36 +145,40 @@ const milestones = [
     "01",
     "Project Proposal",
     "Initial project scope, research problem, objectives and methodology.",
+    "16 March 2026",
+    "TBC",
     "Completed",
   ],
   [
     "02",
     "Progress Presentation 1",
     "First formal assessment of research progress and component development.",
+    "11 May 2026",
+    "TBC",
     "Completed",
   ],
   [
     "03",
     "Progress Presentation 2",
     "Second formal assessment covering implementation, integration and progress.",
+    "31 August 2026",
+    "TBC",
     "Completed",
   ],
   [
     "04",
-    "Final Research Assessment",
-    "Final integrated solution, individual research contributions and documented evaluation.",
-    "Completed",
-  ],
-  [
-    "05",
-    "Final Presentation",
-    "Presentation of the completed BUDDY research project and integrated system.",
+    "Final Assessment / Final Presentation",
+    "Final integrated solution, research findings and project presentation.",
+    "21 October 2026",
+    "TBC",
     "Scheduled",
   ],
   [
-    "06",
-    "Final Viva",
+    "05",
+    "Viva",
     "Individual and group defence of research decisions, implementation and validation evidence.",
+    "21 October 2026",
+    "TBC",
     "Scheduled",
   ],
 ];
@@ -182,72 +186,97 @@ const milestones = [
 const documents = [
   {
     type: "PDF",
-    title: "Project Charter",
-    text: "Project definition, group details and initial research direction.",
-    status: "Available / link pending",
+    title: "Progress Report",
+    text: "Group progress report documenting the development status and research progress of BUDDY.",
+    status: "Available",
+    href: "/documents/progress-report.pdf",
   },
   {
     type: "PDF",
-    title: "Proposal Document",
-    text: "Approved research proposal containing problem, objectives and methodology.",
-    status: "Available / link pending",
+    title: "Ashandth Individual Proposal",
+    text: "Project proposal for offline voice interaction, personalised interaction and safety-aware system integration.",
+    status: "Available",
+    href: "/documents/ashandth-individual-proposal.pdf",
+  },
+  {
+    type: "PDF",
+    title: "Sobiya Individual Proposal",
+    text: "Project proposal for face recognition, emotion-aware interaction and visual intelligence.",
+    status: "Available",
+    href: "/documents/sobiya-individual-proposal.pdf",
+  },
+  {
+    type: "PDF",
+    title: "Yohan Individual Proposal",
+    text: "Project proposal for autonomous navigation, obstacle avoidance and human following.",
+    status: "Available",
+    href: "/documents/yohan-individual-proposal.pdf",
   },
   {
     type: "PDF",
     title: "Research Paper",
-    text: "IEEE-style research paper prepared from the BUDDY project findings.",
-    status: "Available / link pending",
+    text: "Research paper presenting BUDDY's integrated offline voice, visual perception, navigation and safety-aware control architecture.",
+    status: "Available",
+    href: "/documents/buddy-research-paper.pdf",
   },
   {
     type: "PDF",
     title: "Ashandth Individual Thesis",
-    text: "Offline voice intelligence, personalised interaction and safety-aware system integration.",
-    status: "Available / link pending",
+    text: "Offline Voice Intelligence, Personalized Interaction, and Safety-Aware System Integration.",
+    status: "Available",
+    href: "/documents/ashandth-individual-thesis.pdf",
   },
   {
     type: "PDF",
     title: "Sobiya Individual Thesis",
-    text: "Visual intelligence, expression-aware interaction, fall reasoning and adaptive learning.",
-    status: "Available / link pending",
+    text: "Visual Intelligence for Face Recognition, Emotion-Aware Interaction, Human Fall Detection, and Adaptive Object Learning.",
+    status: "Available",
+    href: "/documents/sobiya-individual-thesis.pdf",
   },
   {
     type: "PDF",
     title: "Yohan Individual Thesis",
-    text: "Navigation, obstacle avoidance, human following and 2D path planning.",
-    status: "Available / link pending",
+    text: "Autonomous Navigation, Obstacle Avoidance, Human Following, and 2D Path Planning.",
+    status: "Available",
+    href: "/documents/yohan-individual-thesis.pdf",
   },
   {
     type: "PDF",
     title: "Common Integrated Solution Report",
-    text: "Final integrated documentation for research project R26-SE-040.",
-    status: "Available / link pending",
+    text: "Final integrated solution report documenting the complete BUDDY research system and the three individual research components.",
+    status: "Available",
+    href: "/documents/common-integrated-solution-report.pdf",
   },
 ];
 
 const presentations = [
   {
-    type: "PPT",
+    type: "PDF",
     title: "Proposal Presentation",
-    text: "Initial research proposal presentation.",
-    status: "Completed",
+    text: "Initial BUDDY research proposal presentation covering the research problem, proposed solution and individual research components.",
+    status: "Available",
+    href: "/presentations/proposal-presentation.pdf",
   },
   {
-    type: "PPT",
+    type: "PDF",
     title: "Progress Presentation 1",
-    text: "First research progress presentation.",
-    status: "Completed",
+    text: "First formal research progress presentation covering prototype development and individual component progress.",
+    status: "Available",
+    href: "/presentations/progress-presentation-1.pdf",
   },
   {
-    type: "PPT",
+    type: "PDF",
     title: "Progress Presentation 2",
-    text: "Second research progress and implementation presentation.",
-    status: "Completed",
+    text: "Second formal progress presentation covering integrated architecture, safety, testing and implementation evidence.",
+    status: "Available",
+    href: "/presentations/progress-presentation-2.pdf",
   },
   {
-    type: "PPT",
+    type: "PDF",
     title: "Final Presentation",
-    text: "Final BUDDY integrated research presentation.",
+    text: "Final integrated BUDDY research presentation and defence.",
     status: "Scheduled",
+    href: null,
   },
 ];
 
@@ -256,8 +285,9 @@ function Status({ children }: { children: React.ReactNode }) {
 
   const style =
     value.includes("complete") ||
-    value.includes("implemented") ||
-    value.includes("validated")
+value.includes("implemented") ||
+value.includes("validated") ||
+value.includes("available")
       ? "complete"
       : value.includes("progress") ||
           value.includes("development") ||
@@ -554,6 +584,64 @@ export default function Home() {
               <span>Safety-aware</span>
             </div>
           </article>
+
+          <article className="problem-card problem-card-wide">
+  <span className="card-index">METHODOLOGY</span>
+
+  <h3>
+    Modular development followed by staged integration and validation.
+  </h3>
+
+  <p>
+    BUDDY was developed as three complementary research components:
+    offline voice intelligence, visual intelligence and navigation.
+    Each component was implemented and evaluated independently before
+    integration through shared ROS 2 interfaces on the Raspberry Pi
+    platform.
+  </p>
+
+  <p>
+    Physical movement is separated from high-level intelligent
+    decisions through a safety-supervised command architecture.
+    Validation was performed progressively using software testing,
+    subsystem testing, simulation and physical prototype testing,
+    depending on the maturity and requirements of each capability.
+  </p>
+
+  <div className="mini-pills">
+    <span>Component development</span>
+    <span>ROS 2 integration</span>
+    <span>Subsystem testing</span>
+    <span>Physical validation</span>
+  </div>
+</article>
+
+<article className="problem-card">
+  <span className="card-index">TECHNOLOGIES USED</span>
+
+  <h3>Local-first robotics and AI technologies.</h3>
+
+  <p>
+    The integrated BUDDY platform combines embedded computing,
+    offline speech processing, computer vision, robotics middleware,
+    mobile application development and simulation technologies.
+  </p>
+
+  <div className="mini-pills">
+    <span>Raspberry Pi 4B</span>
+    <span>ROS 2 Jazzy</span>
+    <span>Python</span>
+    <span>Vosk</span>
+    <span>Piper</span>
+    <span>OpenCV</span>
+    <span>DeepFace</span>
+    <span>MediaPipe</span>
+    <span>MobileNetV2</span>
+    <span>Flutter</span>
+    <span>Flask</span>
+    <span>Ursina</span>
+  </div>
+</article>
         </div>
       </section>
 
@@ -875,20 +963,19 @@ export default function Home() {
               <small>Integrated</small>
             </div>
 
-            <div
-              className="robot-outline"
-              aria-label="BUDDY robot image area"
-            >
-              <span>BUDDY PROTOTYPE</span>
+ <div className="robot-photo-stage">
+  <img
+    src="/images/buddy-robot-main.jpg"
+    alt="BUDDY intelligent robot dog physical research prototype"
+    className="buddy-robot-photo"
+  />
 
-              <strong>
-                Final robot
-                <br />
-                research platform
-              </strong>
-
-              <i>R26-SE-040</i>
-            </div>
+  <div className="robot-photo-caption">
+    <span>R26-SE-040</span>
+    <strong>Physical BUDDY prototype</strong>
+    <small>Integrated multimodal research platform</small>
+  </div>
+</div>
           </div>
 
           <aside>
@@ -1069,70 +1156,66 @@ export default function Home() {
         </div>
 
         <div className="milestone-list">
-          <article>
-            <span>01</span>
+  <article>
+    <span>01</span>
 
-            <div>
-              <h3>Physical validation</h3>
+    <div>
+      <h3>Physical validation</h3>
+      <p>
+        Cold boot, offline voice interaction, physical directional
+        movement, four-direction ultrasonic sensing, dynamic obstacle
+        stop/resume and camera face following.
+      </p>
+    </div>
 
-              <p>
-                Cold boot, offline voice interaction, physical directional
-                movement, four-direction ultrasonic sensing, dynamic obstacle
-                stop/resume and camera face following.
-              </p>
-            </div>
+    <Status>Validated</Status>
+  </article>
 
-            <Status>Validated</Status>
-          </article>
+  <article>
+    <span>02</span>
 
-          <article>
-            <span>02</span>
+    <div>
+      <h3>Subsystem validation</h3>
+      <p>
+        Known/unknown person recognition, expression cues, enrolment,
+        adaptive learning of mug, box and phone, and camera/media
+        functionality.
+      </p>
+    </div>
 
-            <div>
-              <h3>Subsystem validation</h3>
+    <Status>Validated</Status>
+  </article>
 
-              <p>
-                Known/unknown person recognition, expression cues, enrolment,
-                adaptive learning of mug, box and phone, and camera/media
-                functionality.
-              </p>
-            </div>
+  <article>
+    <span>03</span>
 
-            <Status>Validated</Status>
-          </article>
+    <div>
+      <h3>Simulation validation</h3>
+      <p>
+        A*, field-of-view reasoning, PID following, dynamic replanning,
+        search, recovery and waiting behaviour in the Ursina-based
+        3D-visualised 2D environment.
+      </p>
+    </div>
 
-          <article>
-            <span>03</span>
+    <Status>Validated</Status>
+  </article>
 
-            <div>
-              <h3>Simulation validation</h3>
+  <article>
+    <span>04</span>
 
-              <p>
-                A*, field-of-view reasoning, PID following, dynamic replanning,
-                search, recovery and waiting behaviour in the Ursina-based
-                3D-visualised 2D environment.
-              </p>
-            </div>
+    <div>
+      <h3>Continuing work</h3>
+      <p>
+        Full-body physical fall validation, complete physical patrol and
+        localisation, dual-microphone acoustic localisation and fully
+        concurrent multimodal operation.
+      </p>
+    </div>
 
-            <Status>Validated</Status>
-          </article>
-
-          <article>
-            <span>04</span>
-
-            <div>
-              <h3>Continuing work</h3>
-
-              <p>
-                Full-body physical fall validation, complete physical patrol
-                and localisation, dual-microphone acoustic localisation and
-                fully concurrent multimodal operation.
-              </p>
-            </div>
-
-            <Status>Continuing work</Status>
-          </article>
-        </div>
+    <Status>Continuing work</Status>
+  </article>
+</div>
 
         <div className="evaluation-note">
           <span>VERIFIED PROJECT EVIDENCE</span>
@@ -1164,30 +1247,30 @@ export default function Home() {
           </h2>
 
           <p>
-            The final dates and allocated marks will be added from the official
-            module assessment schedule rather than estimated.
-          </p>
+  Key academic assessments completed throughout the BUDDY research
+  project, with confirmed presentation dates and official mark
+  allocations to be added once verified.
+</p>
         </div>
 
         <div className="milestone-list">
-          {milestones.map(([number, title, desc, status]) => (
-            <article key={number}>
-              <span>{number}</span>
+  {milestones.map(([number, title, desc, date, marks, status]) => (
+    <article key={number}>
+      <span>{number}</span>
 
-              <div>
-                <h3>{title}</h3>
+      <div>
+        <h3>{title}</h3>
+        <p>{desc}</p>
 
-                <p>{desc}</p>
+        <small>
+          Date: {date} · Marks: {marks}
+        </small>
+      </div>
 
-                <small>
-                  Date / Marks: To be confirmed from official assessment sheet
-                </small>
-              </div>
-
-              <Status>{status}</Status>
-            </article>
-          ))}
-        </div>
+      <Status>{status}</Status>
+    </article>
+  ))}
+</div>
       </section>
 
       {/* DOCUMENTS */}
@@ -1202,26 +1285,32 @@ export default function Home() {
           </h2>
 
           <p>
-            Approved project documents and final research reports will be
-            linked here for viewing or download.
-          </p>
+  Project proposals, progress documentation, research publications
+  and final reports are available here for viewing or download.
+</p>
         </div>
 
         <div className="resource-grid">
-          {documents.map((document) => (
-            <article key={document.title}>
-              <span>{document.type}</span>
+  {documents.map((document) => (
+    <a
+      key={document.title}
+      href={document.href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <article>
+        <span>{document.type}</span>
 
-              <div>
-                <h3>{document.title}</h3>
-
-                <p>{document.text}</p>
-              </div>
-
-              <Status>{document.status}</Status>
-            </article>
-          ))}
+        <div>
+          <h3>{document.title}</h3>
+          <p>{document.text}</p>
         </div>
+
+        <Status>{document.status}</Status>
+      </article>
+    </a>
+  ))}
+</div>
       </section>
 
       {/* PRESENTATIONS */}
@@ -1236,26 +1325,45 @@ export default function Home() {
           </h2>
 
           <p>
-            Previous research presentations and the final presentation will be
-            available from this section.
-          </p>
+  Previous research presentations are available here, while the final
+  presentation will be added after completion.
+</p>
         </div>
 
         <div className="resource-grid">
-          {presentations.map((presentation) => (
-            <article key={presentation.title}>
-              <span>{presentation.type}</span>
+  {presentations.map((presentation) =>
+    presentation.href ? (
+      <a
+        key={presentation.title}
+        href={presentation.href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <article>
+          <span>{presentation.type}</span>
 
-              <div>
-                <h3>{presentation.title}</h3>
+          <div>
+            <h3>{presentation.title}</h3>
+            <p>{presentation.text}</p>
+          </div>
 
-                <p>{presentation.text}</p>
-              </div>
+          <Status>{presentation.status}</Status>
+        </article>
+      </a>
+    ) : (
+      <article key={presentation.title}>
+        <span>{presentation.type}</span>
 
-              <Status>{presentation.status}</Status>
-            </article>
-          ))}
+        <div>
+          <h3>{presentation.title}</h3>
+          <p>{presentation.text}</p>
         </div>
+
+        <Status>{presentation.status}</Status>
+      </article>
+    ),
+  )}
+</div>
       </section>
 
       {/* ABOUT US */}
@@ -1403,17 +1511,23 @@ export default function Home() {
           </article>
 
           <article className="problem-card">
-            <span className="card-index">EMAIL</span>
+  <span className="card-index">EMAIL</span>
 
-            <h3>Research team contact</h3>
+  <h3>Research team contact</h3>
 
-            <p>
-              Team email addresses can be added here once the final public
-              contact details are confirmed.
-            </p>
+  <p>
+    For academic enquiries, project information or collaboration related
+    to BUDDY, contact the research team through the email below.
+  </p>
 
-            <span className="card-symbol">@</span>
-          </article>
+  <div className="mini-pills">
+    <a href="mailto:ashandth0309@gmail.com">
+      ashandth0309@gmail.com
+    </a>
+  </div>
+
+  <span className="card-symbol">@</span>
+</article>
 
           <article className="problem-card accent-card">
             <span className="card-index">SOURCE CODE</span>
