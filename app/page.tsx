@@ -251,28 +251,32 @@ const documents = [
 
 const presentations = [
   {
-    type: "PPT",
+    type: "PDF",
     title: "Proposal Presentation",
-    text: "Initial research proposal presentation.",
-    status: "Completed",
+    text: "Initial BUDDY research proposal presentation covering the research problem, proposed solution and individual research components.",
+    status: "Available",
+    href: "/presentations/proposal-presentation.pdf",
   },
   {
-    type: "PPT",
+    type: "PDF",
     title: "Progress Presentation 1",
-    text: "First research progress presentation.",
-    status: "Completed",
+    text: "First formal research progress presentation covering prototype development and individual component progress.",
+    status: "Available",
+    href: "/presentations/progress-presentation-1.pdf",
   },
   {
-    type: "PPT",
+    type: "PDF",
     title: "Progress Presentation 2",
-    text: "Second research progress and implementation presentation.",
-    status: "Completed",
+    text: "Second formal progress presentation covering integrated architecture, safety, testing and implementation evidence.",
+    status: "Available",
+    href: "/presentations/progress-presentation-2.pdf",
   },
   {
-    type: "PPT",
+    type: "PDF",
     title: "Final Presentation",
-    text: "Final BUDDY integrated research presentation.",
+    text: "Final integrated BUDDY research presentation and defence.",
     status: "Scheduled",
+    href: null,
   },
 ];
 
@@ -1264,26 +1268,45 @@ export default function Home() {
           </h2>
 
           <p>
-            Previous research presentations and the final presentation will be
-            available from this section.
-          </p>
+  Previous research presentations are available here, while the final
+  presentation will be added after completion.
+</p>
         </div>
 
         <div className="resource-grid">
-          {presentations.map((presentation) => (
-            <article key={presentation.title}>
-              <span>{presentation.type}</span>
+  {presentations.map((presentation) =>
+    presentation.href ? (
+      <a
+        key={presentation.title}
+        href={presentation.href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <article>
+          <span>{presentation.type}</span>
 
-              <div>
-                <h3>{presentation.title}</h3>
+          <div>
+            <h3>{presentation.title}</h3>
+            <p>{presentation.text}</p>
+          </div>
 
-                <p>{presentation.text}</p>
-              </div>
+          <Status>{presentation.status}</Status>
+        </article>
+      </a>
+    ) : (
+      <article key={presentation.title}>
+        <span>{presentation.type}</span>
 
-              <Status>{presentation.status}</Status>
-            </article>
-          ))}
+        <div>
+          <h3>{presentation.title}</h3>
+          <p>{presentation.text}</p>
         </div>
+
+        <Status>{presentation.status}</Status>
+      </article>
+    ),
+  )}
+</div>
       </section>
 
       {/* ABOUT US */}
