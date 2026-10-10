@@ -905,20 +905,19 @@ export default function Home() {
               <small>Integrated</small>
             </div>
 
-            <div
-              className="robot-outline"
-              aria-label="BUDDY robot image area"
-            >
-              <span>BUDDY PROTOTYPE</span>
+ <div className="robot-photo-stage">
+  <img
+    src="/images/buddy-robot-main.jpg"
+    alt="BUDDY intelligent robot dog physical research prototype"
+    className="buddy-robot-photo"
+  />
 
-              <strong>
-                Final robot
-                <br />
-                research platform
-              </strong>
-
-              <i>R26-SE-040</i>
-            </div>
+  <div className="robot-photo-caption">
+    <span>R26-SE-040</span>
+    <strong>Physical BUDDY prototype</strong>
+    <small>Integrated multimodal research platform</small>
+  </div>
+</div>
           </div>
 
           <aside>
