@@ -1073,22 +1073,65 @@ export default function Home() {
         </div>
 
         <div className="milestone-list">
-  {milestones.map(([number, title, desc, date, marks, status]) => (
-    <article key={number}>
-      <span>{number}</span>
+  <article>
+    <span>01</span>
 
-      <div>
-        <h3>{title}</h3>
-        <p>{desc}</p>
+    <div>
+      <h3>Physical validation</h3>
+      <p>
+        Cold boot, offline voice interaction, physical directional
+        movement, four-direction ultrasonic sensing, dynamic obstacle
+        stop/resume and camera face following.
+      </p>
+    </div>
 
-        <small>
-          Date: {date} · Marks: {marks}
-        </small>
-      </div>
+    <Status>Validated</Status>
+  </article>
 
-      <Status>{status}</Status>
-    </article>
-  ))}
+  <article>
+    <span>02</span>
+
+    <div>
+      <h3>Subsystem validation</h3>
+      <p>
+        Known/unknown person recognition, expression cues, enrolment,
+        adaptive learning of mug, box and phone, and camera/media
+        functionality.
+      </p>
+    </div>
+
+    <Status>Validated</Status>
+  </article>
+
+  <article>
+    <span>03</span>
+
+    <div>
+      <h3>Simulation validation</h3>
+      <p>
+        A*, field-of-view reasoning, PID following, dynamic replanning,
+        search, recovery and waiting behaviour in the Ursina-based
+        3D-visualised 2D environment.
+      </p>
+    </div>
+
+    <Status>Validated</Status>
+  </article>
+
+  <article>
+    <span>04</span>
+
+    <div>
+      <h3>Continuing work</h3>
+      <p>
+        Full-body physical fall validation, complete physical patrol and
+        localisation, dual-microphone acoustic localisation and fully
+        concurrent multimodal operation.
+      </p>
+    </div>
+
+    <Status>Continuing work</Status>
+  </article>
 </div>
 
         <div className="evaluation-note">
@@ -1121,30 +1164,30 @@ export default function Home() {
           </h2>
 
           <p>
-            The final dates and allocated marks will be added from the official
-            module assessment schedule rather than estimated.
-          </p>
+  Key academic assessments completed throughout the BUDDY research
+  project, with confirmed presentation dates and official mark
+  allocations to be added once verified.
+</p>
         </div>
 
         <div className="milestone-list">
-          {milestones.map(([number, title, desc, status]) => (
-            <article key={number}>
-              <span>{number}</span>
+  {milestones.map(([number, title, desc, date, marks, status]) => (
+    <article key={number}>
+      <span>{number}</span>
 
-              <div>
-                <h3>{title}</h3>
+      <div>
+        <h3>{title}</h3>
+        <p>{desc}</p>
 
-                <p>{desc}</p>
+        <small>
+          Date: {date} · Marks: {marks}
+        </small>
+      </div>
 
-                <small>
-                  Date / Marks: To be confirmed from official assessment sheet
-                </small>
-              </div>
-
-              <Status>{status}</Status>
-            </article>
-          ))}
-        </div>
+      <Status>{status}</Status>
+    </article>
+  ))}
+</div>
       </section>
 
       {/* DOCUMENTS */}
