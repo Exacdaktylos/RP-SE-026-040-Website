@@ -2902,6 +2902,14 @@ button {
   color: var(--muted);
 }
 
+.resource-grid > a {
+  display: block;
+}
+
+.resource-grid > a article {
+  height: 100%;
+}
+
 .github-callout {
   margin-top: 14px;
 

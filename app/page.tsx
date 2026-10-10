@@ -186,45 +186,66 @@ const milestones = [
 const documents = [
   {
     type: "PDF",
-    title: "Project Charter",
-    text: "Project definition, group details and initial research direction.",
-    status: "Available / link pending",
+    title: "Progress Report",
+    text: "Group progress report documenting the development status and research progress of BUDDY.",
+    status: "Available",
+    href: "/documents/progress-report.pdf",
   },
   {
     type: "PDF",
-    title: "Proposal Document",
-    text: "Approved research proposal containing problem, objectives and methodology.",
-    status: "Available / link pending",
+    title: "Ashandth Individual Proposal",
+    text: "Project proposal for offline voice interaction, personalised interaction and safety-aware system integration.",
+    status: "Available",
+    href: "/documents/ashandth-individual-proposal.pdf",
+  },
+  {
+    type: "PDF",
+    title: "Sobiya Individual Proposal",
+    text: "Project proposal for face recognition, emotion-aware interaction and visual intelligence.",
+    status: "Available",
+    href: "/documents/sobiya-individual-proposal.pdf",
+  },
+  {
+    type: "PDF",
+    title: "Yohan Individual Proposal",
+    text: "Project proposal for autonomous navigation, obstacle avoidance and human following.",
+    status: "Available",
+    href: "/documents/yohan-individual-proposal.pdf",
   },
   {
     type: "PDF",
     title: "Research Paper",
-    text: "IEEE-style research paper prepared from the BUDDY project findings.",
-    status: "Available / link pending",
+    text: "Research paper presenting BUDDY's integrated offline voice, visual perception, navigation and safety-aware control architecture.",
+    status: "Available",
+    href: "/documents/buddy-research-paper.pdf",
   },
   {
     type: "PDF",
     title: "Ashandth Individual Thesis",
-    text: "Offline voice intelligence, personalised interaction and safety-aware system integration.",
-    status: "Available / link pending",
+    text: "Offline Voice Intelligence, Personalized Interaction, and Safety-Aware System Integration.",
+    status: "Available",
+    href: "/documents/ashandth-individual-thesis.pdf",
   },
   {
     type: "PDF",
     title: "Sobiya Individual Thesis",
-    text: "Visual intelligence, expression-aware interaction, fall reasoning and adaptive learning.",
-    status: "Available / link pending",
+    text: "Visual Intelligence for Face Recognition, Emotion-Aware Interaction, Human Fall Detection, and Adaptive Object Learning.",
+    status: "Available",
+    href: "/documents/sobiya-individual-thesis.pdf",
   },
   {
     type: "PDF",
     title: "Yohan Individual Thesis",
-    text: "Navigation, obstacle avoidance, human following and 2D path planning.",
-    status: "Available / link pending",
+    text: "Autonomous Navigation, Obstacle Avoidance, Human Following, and 2D Path Planning.",
+    status: "Available",
+    href: "/documents/yohan-individual-thesis.pdf",
   },
   {
     type: "PDF",
     title: "Common Integrated Solution Report",
-    text: "Final integrated documentation for research project R26-SE-040.",
-    status: "Available / link pending",
+    text: "Final integrated solution report documenting the complete BUDDY research system and the three individual research components.",
+    status: "Available",
+    href: "/documents/common-integrated-solution-report.pdf",
   },
 ];
 
@@ -260,8 +281,9 @@ function Status({ children }: { children: React.ReactNode }) {
 
   const style =
     value.includes("complete") ||
-    value.includes("implemented") ||
-    value.includes("validated")
+value.includes("implemented") ||
+value.includes("validated") ||
+value.includes("available")
       ? "complete"
       : value.includes("progress") ||
           value.includes("development") ||
@@ -1202,26 +1224,32 @@ export default function Home() {
           </h2>
 
           <p>
-            Approved project documents and final research reports will be
-            linked here for viewing or download.
-          </p>
+  Project proposals, progress documentation, research publications
+  and final reports are available here for viewing or download.
+</p>
         </div>
 
         <div className="resource-grid">
-          {documents.map((document) => (
-            <article key={document.title}>
-              <span>{document.type}</span>
+  {documents.map((document) => (
+    <a
+      key={document.title}
+      href={document.href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <article>
+        <span>{document.type}</span>
 
-              <div>
-                <h3>{document.title}</h3>
-
-                <p>{document.text}</p>
-              </div>
-
-              <Status>{document.status}</Status>
-            </article>
-          ))}
+        <div>
+          <h3>{document.title}</h3>
+          <p>{document.text}</p>
         </div>
+
+        <Status>{document.status}</Status>
+      </article>
+    </a>
+  ))}
+</div>
       </section>
 
       {/* PRESENTATIONS */}
