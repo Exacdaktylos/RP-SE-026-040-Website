@@ -145,36 +145,40 @@ const milestones = [
     "01",
     "Project Proposal",
     "Initial project scope, research problem, objectives and methodology.",
+    "16 March 2026",
+    "TBC",
     "Completed",
   ],
   [
     "02",
     "Progress Presentation 1",
     "First formal assessment of research progress and component development.",
+    "11 May 2026",
+    "TBC",
     "Completed",
   ],
   [
     "03",
     "Progress Presentation 2",
     "Second formal assessment covering implementation, integration and progress.",
+    "31 August 2026",
+    "TBC",
     "Completed",
   ],
   [
     "04",
-    "Final Research Assessment",
-    "Final integrated solution, individual research contributions and documented evaluation.",
-    "Completed",
-  ],
-  [
-    "05",
-    "Final Presentation",
-    "Presentation of the completed BUDDY research project and integrated system.",
+    "Final Assessment / Final Presentation",
+    "Final integrated solution, research findings and project presentation.",
+    "21 October 2026",
+    "TBC",
     "Scheduled",
   ],
   [
-    "06",
-    "Final Viva",
+    "05",
+    "Viva",
     "Individual and group defence of research decisions, implementation and validation evidence.",
+    "21 October 2026",
+    "TBC",
     "Scheduled",
   ],
 ];
@@ -1069,70 +1073,23 @@ export default function Home() {
         </div>
 
         <div className="milestone-list">
-          <article>
-            <span>01</span>
+  {milestones.map(([number, title, desc, date, marks, status]) => (
+    <article key={number}>
+      <span>{number}</span>
 
-            <div>
-              <h3>Physical validation</h3>
+      <div>
+        <h3>{title}</h3>
+        <p>{desc}</p>
 
-              <p>
-                Cold boot, offline voice interaction, physical directional
-                movement, four-direction ultrasonic sensing, dynamic obstacle
-                stop/resume and camera face following.
-              </p>
-            </div>
+        <small>
+          Date: {date} · Marks: {marks}
+        </small>
+      </div>
 
-            <Status>Validated</Status>
-          </article>
-
-          <article>
-            <span>02</span>
-
-            <div>
-              <h3>Subsystem validation</h3>
-
-              <p>
-                Known/unknown person recognition, expression cues, enrolment,
-                adaptive learning of mug, box and phone, and camera/media
-                functionality.
-              </p>
-            </div>
-
-            <Status>Validated</Status>
-          </article>
-
-          <article>
-            <span>03</span>
-
-            <div>
-              <h3>Simulation validation</h3>
-
-              <p>
-                A*, field-of-view reasoning, PID following, dynamic replanning,
-                search, recovery and waiting behaviour in the Ursina-based
-                3D-visualised 2D environment.
-              </p>
-            </div>
-
-            <Status>Validated</Status>
-          </article>
-
-          <article>
-            <span>04</span>
-
-            <div>
-              <h3>Continuing work</h3>
-
-              <p>
-                Full-body physical fall validation, complete physical patrol
-                and localisation, dual-microphone acoustic localisation and
-                fully concurrent multimodal operation.
-              </p>
-            </div>
-
-            <Status>Continuing work</Status>
-          </article>
-        </div>
+      <Status>{status}</Status>
+    </article>
+  ))}
+</div>
 
         <div className="evaluation-note">
           <span>VERIFIED PROJECT EVIDENCE</span>
