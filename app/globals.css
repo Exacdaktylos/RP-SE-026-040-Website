@@ -1086,6 +1086,11 @@ button {
   text-transform: uppercase;
 }
 
+.problem-card-wide .mini-pills span {
+  color: #123c35;
+  background: #fffdf8;
+}
+
 .gap-visual {
   position: absolute;
 

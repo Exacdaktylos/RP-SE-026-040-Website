@@ -584,6 +584,64 @@ export default function Home() {
               <span>Safety-aware</span>
             </div>
           </article>
+
+          <article className="problem-card problem-card-wide">
+  <span className="card-index">METHODOLOGY</span>
+
+  <h3>
+    Modular development followed by staged integration and validation.
+  </h3>
+
+  <p>
+    BUDDY was developed as three complementary research components:
+    offline voice intelligence, visual intelligence and navigation.
+    Each component was implemented and evaluated independently before
+    integration through shared ROS 2 interfaces on the Raspberry Pi
+    platform.
+  </p>
+
+  <p>
+    Physical movement is separated from high-level intelligent
+    decisions through a safety-supervised command architecture.
+    Validation was performed progressively using software testing,
+    subsystem testing, simulation and physical prototype testing,
+    depending on the maturity and requirements of each capability.
+  </p>
+
+  <div className="mini-pills">
+    <span>Component development</span>
+    <span>ROS 2 integration</span>
+    <span>Subsystem testing</span>
+    <span>Physical validation</span>
+  </div>
+</article>
+
+<article className="problem-card">
+  <span className="card-index">TECHNOLOGIES USED</span>
+
+  <h3>Local-first robotics and AI technologies.</h3>
+
+  <p>
+    The integrated BUDDY platform combines embedded computing,
+    offline speech processing, computer vision, robotics middleware,
+    mobile application development and simulation technologies.
+  </p>
+
+  <div className="mini-pills">
+    <span>Raspberry Pi 4B</span>
+    <span>ROS 2 Jazzy</span>
+    <span>Python</span>
+    <span>Vosk</span>
+    <span>Piper</span>
+    <span>OpenCV</span>
+    <span>DeepFace</span>
+    <span>MediaPipe</span>
+    <span>MobileNetV2</span>
+    <span>Flutter</span>
+    <span>Flask</span>
+    <span>Ursina</span>
+  </div>
+</article>
         </div>
       </section>
 
@@ -1453,17 +1511,23 @@ export default function Home() {
           </article>
 
           <article className="problem-card">
-            <span className="card-index">EMAIL</span>
+  <span className="card-index">EMAIL</span>
 
-            <h3>Research team contact</h3>
+  <h3>Research team contact</h3>
 
-            <p>
-              Team email addresses can be added here once the final public
-              contact details are confirmed.
-            </p>
+  <p>
+    For academic enquiries, project information or collaboration related
+    to BUDDY, contact the research team through the email below.
+  </p>
 
-            <span className="card-symbol">@</span>
-          </article>
+  <div className="mini-pills">
+    <a href="mailto:ashandth0309@gmail.com">
+      ashandth0309@gmail.com
+    </a>
+  </div>
+
+  <span className="card-symbol">@</span>
+</article>
 
           <article className="problem-card accent-card">
             <span className="card-index">SOURCE CODE</span>
