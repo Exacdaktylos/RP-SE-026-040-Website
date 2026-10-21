@@ -2741,6 +2741,26 @@ button {
   box-shadow: 4px 4px 0 var(--ink);
 }
 
+.member-avatar {
+  overflow: hidden;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.accent-orange .member-avatar img {
+  object-position: center 18%;
+}
+
+
+
 .accent-violet .member-avatar {
   background: #f3dfa5;
 }

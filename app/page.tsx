@@ -48,6 +48,7 @@ const features = [
 const team = [
   {
     initials: "AU",
+    image: "/images/team/ashandth.png",
     name: "Ashandth Uthayashankar",
     id: "IT22272522",
     role: "Offline Voice Intelligence & System Integration",
@@ -78,6 +79,7 @@ const team = [
   },
   {
     initials: "SA",
+    image: "/images/team/sobiya.jpeg",
     name: "Sobiya Anton Suresh",
     id: "IT22203694",
     role: "Visual Intelligence & Companion Application",
@@ -109,6 +111,7 @@ const team = [
   },
   {
     initials: "YW",
+    image: "/images/team/yohan.jpeg",
     name: "S. S. Y. Wickramasinghe",
     fullName: "Yohan Wickramasinghe",
     id: "IT21816086",
@@ -247,6 +250,20 @@ const documents = [
     status: "Available",
     href: "/documents/common-integrated-solution-report.pdf",
   },
+  {
+    type: "PDF",
+    title: "SE Checklist 1 – Git Repository Report",
+    text: "Software Engineering Checklist 1 verification report documenting repository structure, branch-based development, commit history, README documentation, deployment assets and repository hygiene.",
+    status: "Available",
+    href: "/documents/checklist-1-git-repository-report.pdf",
+  },
+  {
+    type: "PDF",
+    title: "Topic Assessment Form",
+    text: "Official Topic Assessment Form for research project R26-SE-040, including the research topic, problem, proposed solution, objectives and supervisor review.",
+    status: "Available",
+    href: "/documents/topic-assessment-form.pdf",
+  },
 ];
 
 const presentations = [
@@ -274,9 +291,9 @@ const presentations = [
   {
     type: "PDF",
     title: "Final Presentation",
-    text: "Final integrated BUDDY research presentation and defence.",
-    status: "Scheduled",
-    href: null,
+    text: "Final BUDDY research presentation covering the integrated prototype, individual research components, testing evidence, limitations and final defence.",
+    status: "Available",
+    href: "/presentations/final-presentation.pdf",
   },
 ];
 
@@ -396,10 +413,12 @@ export default function Home() {
             Research Project R26-SE-040
           </div>
 
-          <h1>
-            A companion robot that can{" "}
-            <em>listen, observe and move safely.</em>
-          </h1>
+
+<h1 className="hero-title">
+  Emotionally Intelligent Companion Dog Robot with{" "}
+  <em>AI-Driven Security and Voice Interaction.</em>
+</h1>
+
 
           <p className="hero-lede">
             BUDDY is an affordable intelligent robot-dog research prototype
@@ -1325,8 +1344,8 @@ export default function Home() {
           </h2>
 
           <p>
-  Previous research presentations are available here, while the final
-  presentation will be added after completion.
+  Research presentations from proposal through the final defence are
+  available here for viewing or download.
 </p>
         </div>
 
@@ -1392,9 +1411,12 @@ export default function Home() {
                 className={`team-card accent-${member.accent}`}
               >
                 <div className="member-top">
-                  <span className="member-avatar">
-                    {member.initials}
-                  </span>
+                 <span className="member-avatar">
+  <img
+    src={member.image}
+    alt={`${member.name} profile`}
+  />
+</span>
 
                   <span className="member-id">{member.id}</span>
                 </div>
