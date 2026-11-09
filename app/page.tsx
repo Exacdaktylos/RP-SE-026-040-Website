@@ -984,7 +984,7 @@ export default function Home() {
 
  <div className="robot-photo-stage">
   <img
-    src="/images/buddy-robot-main.jpg"
+    src="/images/buddy-robot-main.png"
     alt="BUDDY intelligent robot dog physical research prototype"
     className="buddy-robot-photo"
   />
